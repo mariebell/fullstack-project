@@ -1,7 +1,15 @@
 # fullstack-project
 Docker, Laravel, React, and TypeScript.
 
-## 記事
+## 起動手順
+```
+docker-compose up -d
+docker-comopse exec app composer install
+docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan migrate
+```
+
+## 解説記事
 ### 前編（バックエンド）
 https://sagara.ink/article/app/204/
 
