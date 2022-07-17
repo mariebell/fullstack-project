@@ -5391,7 +5391,7 @@ function Example() {
     className: "card"
   }, react_1["default"].createElement("div", {
     className: "card-header"
-  }, "Example Component"), react_1["default"].createElement("div", {
+  }, "Example Component1"), react_1["default"].createElement("div", {
     className: "card-body"
   }, "I'm an example component!")))));
 }
