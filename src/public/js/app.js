@@ -5378,7 +5378,8 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
+var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js")); // import { Button } from '@material-ui/core'; //Buttonをインポート
+
 
 function Example() {
   return react_1["default"].createElement("div", {
@@ -5391,7 +5392,7 @@ function Example() {
     className: "card"
   }, react_1["default"].createElement("div", {
     className: "card-header"
-  }, "Example Component1"), react_1["default"].createElement("div", {
+  }, "Example Component"), react_1["default"].createElement("div", {
     className: "card-body"
   }, "I'm an example component!")))));
 }
