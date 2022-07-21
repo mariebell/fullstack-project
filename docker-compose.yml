@@ -1,44 +1,56 @@
 version: "3.9"
 services:
-  proxy:
-    container_name: fullstack-proxy
+  clinic_proxy:
+    container_name: dental_clinic_proxy
     build: ./docker/nginx
     ports:
-      - "8000:80"
+      - "8100:80"
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/usr/share/nginx/html
+    networks:
+      - dental_network
 
-  app:
-    container_name: fullstack-app
+  clinic_app:
+    container_name: dental_clinic_app
     build: ./docker/php
     volumes:
       - ./docker/php/php.ini:/usr/local/php/php.ini
       - ./src:/var/www/html
+    networks:
+      - dental_network
 
-  db:
-    container_name: fullstack-db
+  clinic_db:
+    container_name: dental_clinic_db
     build: ./docker/mysql
     ports:
       - 3306:3306
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-      - fullstack-db-volume:/var/lib/mysql
+      - dental-clinic-db-volume:/var/lib/mysql
     environment:
       MYSQL_DATABASE: laravel_db
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    networks:
+      - dental_network
 
-  phpmyadmin:
-    container_name: fullstack-phpmyadmin
+  clinic_phpmyadmin:
+    container_name: dental_clinic_phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
-      - 8001:80
+      - 8101:80
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=db
+      - PMA_HOST=clinic_db
       - PMA_ROOT_PASSWORD=rootpassword
+    networks:
+      - dental_network
 
 volumes:
-  fullstack-db-volume:
+  dental-clinic-db-volume:
+
+networks:
+  dental_network:
+    external: true
