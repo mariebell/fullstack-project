@@ -8,12 +8,12 @@ interface LoginFormData {
   password: string
 }
 interface User {
-  id: number;
-  name: string;
-  email: string;
-  email_verified_at?: string|null;
-  created_at: string|null;
-  updated_at: string|null;
+  id: number
+  name: string
+  email: string
+  email_verified_at?: string|null
+  created_at: string|null
+  updated_at: string|null
 }
 interface AuthContextType {
   user: User|false|null;
@@ -22,7 +22,7 @@ interface AuthContextType {
 }
 
 const AuthProvider = ({children}: {children: any}) => {
-  const [user, setUser] = useState<any>(null!)
+  const [user, setUser] = useState<User|false>(null!)
   axios.post('/user').then(res => {
     if (!user && res.data.error === null) {
       setUser(res.data.data)
@@ -47,4 +47,4 @@ const AuthProvider = ({children}: {children: any}) => {
   );
 }
 
-export default AuthProvider;
+export default AuthProvider

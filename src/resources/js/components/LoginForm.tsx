@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from './AuthProvider';
+import { AuthContext } from './AuthProvider'
 
 interface LoginFormData {
   email: string,
@@ -68,7 +68,7 @@ const LoginForm = () => {
             </div>
           </div>
         </>
-    );
+    )
 }
 
-export default LoginForm;
+export default LoginForm

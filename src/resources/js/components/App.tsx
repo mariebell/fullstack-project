@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import AuthProvider from './AuthProvider'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import LoginForm from './LoginForm';
-import PrivateContent from './PrivateContent';
-import PublicContent from './PublicContent';
+import LoginForm from './LoginForm'
+import PrivateContent from './PrivateContent'
+import PublicContent from './PublicContent'
 
 function App(): React.ReactElement {
   return (

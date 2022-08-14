@@ -14,4 +14,4 @@ const PublicContent = () => {
   );
 }
 
-export default PublicContent;
+export default PublicContent

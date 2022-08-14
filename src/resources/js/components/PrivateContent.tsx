@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthProvider';
+import { useNavigate } from 'react-router-dom'
+import { AuthContext } from './AuthProvider'
 
 const PrivateContent = () => {
   const navigate = useNavigate()
@@ -29,4 +29,4 @@ const PrivateContent = () => {
   );
 }
 
-export default PrivateContent;
+export default PrivateContent
